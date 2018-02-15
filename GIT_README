@@ -1,0 +1,56 @@
+1.Installing Git :
+	sudo apt-get install git
+		OR
+	yum install git
+
+2.Configuring GitHub : 
+	Once the installation has successfully completed, the next thing to do is to set up the configuration details of the GitHub user. To do this use the following two commands by replacing "user_name" with your GitHub username and replacing "email_id" with your email-id you used to create your GitHub account.
+
+	git config --global user.name "user_name"
+	git config --global user.email "email_id"
+
+3.Creating a local repository:
+	This will serve as a local repository which will later be pushed onto the GitHub website.
+
+	git init "REPONAME"
+	NOTE : It will create "REPONAME" folder and initialize empty Git repository in <path_of_REPONAME>/.git/
+
+4."REPONAME" is the folder that is created and "init" makes the folder a GitHub repository. Change the directory to this newly created folder:
+	
+	cd "REPONAME"
+
+5.Adding repository files to an index :
+	This is an important step. Here we add all the things that need to be pushed onto the website into an index. These things might be the text files or programs that you might add for the first time into the repository or it could be adding a file that already exists but with some changes (a newer version/updated version).
+
+	git add file_name 
+		OR
+	git add folder_name
+
+	NOTE : The "git add" command can be used to add any number of files and folders to the index. Here, when I say index, what I am refering to is a buffer like space that stores the files/folders that have to be added into the Git repository.
+
+6.Commiting changes :
+	Once all the files are added, we can commit it. This means that we have finalized what additions and/or changes have to be made and they are now ready to be uploaded onto our repository.
+
+	git commit -m "some_message"
+
+7.Creating a repository on GitHub :
+	Create a repository on GitHub. Notice that the name of the repository should be the same as the repository's on the local system. In this case, it will be "REPONAME". To do this,
+	
+	a. login to your account on https://github.com. 
+	b. click on the "plus(+)" symbol at the top right corner of the page and select "create new repository".
+
+	Once this is created, we can push the contents of the local repository onto the GitHub repository in our profile. Connect to the repository on GitHub using the command:
+
+	git remote add origin https://github.com/<user_name>/<REPONAME>.git
+	git remote set-url origin https://<user_name>@github.com/<user_name>/<REPONAME>.git
+
+8.Pushing files in local repository to GitHub repository :
+	The final step is to push the local repository contents into the remote host repository (GitHub),by using the command
+
+	git push origin master
+
+	NOTE : Enter the login credentials [user_name and password] .
+
+NOTE :
+	For subsequent projects or for creating repositories, you can start off with step 3 directly OR you want to push existing files/folders with some new changes then you start off with step 4 directly. Finally, if you loginto your GitHub account and click on your "REPONAME" repository, you can see that your files/folder have been uploaded and 
+are visible to all.
